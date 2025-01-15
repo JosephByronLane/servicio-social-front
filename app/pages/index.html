@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../styles/main-page/index-styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../assets/Logo-modelo.png"
+            alt="Logo"
+            width="2000"
+            height="48"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown1"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Admisiones
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Formación integral
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown3"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">La universidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vida universitaria</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="master-container">
+      <div class="top-content">
+        <div class="left-container">
+          <h1>Casas</h1>
+          <h3>¿En búsqueda de un lugar para vivir en Mérida?</h3>
+          <br />
+          <p>
+            Ponemos a tu disposición este sitio que pretende conectar a la
+            comunidad estudiantil con opciones de alejamiento en Mérida. A
+            través de este catálogo, facilitamos la búsqueda de opciones de
+            renta para nuestros estudiantes según sus necesidades.
+          </p>
+          <br />
+          <button class="see-more-button">
+            Ver más
+            <img
+              src="../assets/right-arrow.png"
+              alt=""
+              width="20px"
+              height="40px"
+            />
+          </button>
+        </div>
+        <div class="right-container">
+          <img src="../assets/stay-at-home 1.png" alt="" />
+        </div>
+      </div>
+      <div class="disclaimer">
+        <p>
+          Importante: La Universidad Modelo actúa como facilitadora de
+          información, creando puentes entre propietarios de inmuebles en renta
+          y la comunidad universitaria en búsqueda de alojamiento. Por ello,
+          recomendamos verificar la información de contacto y condiciones del
+          inmueble, antes de realizar la firma de un contrato. No nos hacemos
+          responsables por los tratos realizados entre el arrendador y los
+          estudiantes.
+        </p>
+      </div>
+      <div class="buscar-casa">
+        <form class="search-bar" action="/search" method="GET">
+          <input
+            type="text"
+            class="search-input"
+            name="q"
+            placeholder="Buscar Casa"
+          />
+          <button type="submit" class="search-button">
+            <img src="../assets/search.png" alt="" />
+          </button>
+        </form>
+      </div>
+
+      <div class="housing-type">
+        <button class="housing-type-button">
+          Casas
+          <img src="../assets/casa.png" alt="" />
+        </button>
+
+        <button class="housing-type-button">
+          Departamentos
+          <img src="../assets/depa.png" alt="" />
+        </button>
+
+        <button class="housing-type-button">
+          Cuartos
+          <img src="../assets/cil_room.png" alt="" />
+        </button>
+
+        <button class="housing-type-button">
+          Casas para estudiantes
+          <img src="../assets/student-house.png" alt="" />
+        </button>
+
+        <button class="housing-type-button">
+          Solo para mujeres
+          <img src="../assets/women.png" alt="" />
+        </button>
+
+        <button class="housing-type-button">
+          Con roomie
+          <img src="../assets/roomie.png" alt="" />
+        </button>
+      </div>
+      <div class="filters">
+        <h2>Filtros</h2>
+        <div class="price-range-selector">
+          <h2>Precio</h2>
+          <div class="prices">
+            <div class="min-price">
+              <p>Mínimo</p>
+              <form>
+                <input type="number" />
+              </form>
+              <p>MXN</p>
+            </div>
+            <p>a</p>
+            <div class="max-price">
+              <p>Máximo</p>
+              <form>
+                <input type="number" />
+              </form>
+              <p>MXN</p>
+            </div>
+          </div>
+        </div>
+        <div class="filter-buttons">
+          <button>
+            Amueblado
+            <img
+              src="../assets/filter-buttons/material-symbols_bed.png"
+              alt=""
+            />
+          </button>
+
+          <button>
+            Limpieza
+            <img src="../assets/filter-buttons/mdi_broom.png" alt="" />
+          </button>
+
+          <button>
+            Internet
+            <img
+              src="../assets/filter-buttons/material-symbols_wifi.png"
+              alt=""
+            />
+          </button>
+
+          <button>
+            Agua
+            <img src="../assets/filter-buttons/mdi_water.png" alt="" />
+          </button>
+
+          <button>
+            Luz
+            <img
+              src="../assets/filter-buttons/material-symbols_lightbulb.png"
+              alt=""
+            />
+          </button>
+
+          <button>
+            Lavado
+            <img
+              src="../assets/filter-buttons/lsicon_clothes-filled.png"
+              alt=""
+            />
+          </button>
+
+          <button>
+            Estacionamiento
+            <img src="../assets/filter-buttons/mdi_car.png" alt="" />
+          </button>
+
+          <button>
+            Comida
+            <img src="../assets/filter-buttons/fa6-solid_utensils.png" alt="" />
+          </button>
+
+          <button>
+            Recolección de basura
+            <img src="../assets/filter-buttons/mdi_trash.png" alt="" />
+          </button>
+
+          <button>
+            Pet friendly
+            <img
+              src="../assets/filter-buttons/streamline_pet-paw-solid.png"
+              alt=""
+            />
+          </button>
+
+          <button>
+            Áreas comunes
+            <img
+              src="../assets/filter-buttons/material-symbols_pool.png"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+      <div class="showroom">
+        <h1>Más de 100 alojamientos</h1>
+
+        <div class="house-images">
+          <div class="house" id="house-details-1">
+            <img src="../assets/casa-1.png" alt="" id="house-image-1" />
+            <h3 id="house-name-1">Departamento en Altabrisa</h3>
+            <h6 id="house-price-1">$7,500 MXN al mes</h6>
+            <hr />
+            <p id="house-description-1">
+              Ubicado en una colonia segura, incluye luz, agua y recolección de
+              basura. Se permiten mascotas.
+            </p>
+          </div>
+
+          <div class="house" id="house-details-2">
+            <img src="../assets/casa-2.png" alt="" id="house-image-2" />
+            <h3 id="house-name-2">Departamento en Altabrisa</h3>
+            <h6 id="house-price-2">$7,500 MXN al mes</h6>
+            <hr />
+            <p id="house-description-2">
+              Ubicado en una colonia segura, incluye luz, agua y recolección de
+              basura. Se permiten mascotas.
+            </p>
+          </div>
+
+          <div class="house" id="house-details-3">
+            <img src="../assets/casa-3.png" alt="" id="house-image-3" />
+            <h3 id="house-name-3">Departamento en Altabrisa</h3>
+            <h6 id="house-price-3">$7,500 MXN al mes</h6>
+            <hr />
+            <p id="house-description-3">
+              Ubicado en una colonia segura, incluye luz, agua y recolección de
+              basura. Se permiten mascotas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="modelo-banner">
+        <div class="banner-item-first">
+          <img src="../assets/Logo-modelo.png" alt="" />
+          <div class="social-media">
+            <img src="../assets/fb.png" alt="" />
+            <img src="../assets/insta.png" alt="" />
+            <img src="../assets/twitter.png" alt="" />
+          </div>
+          <p>Aviso de privacidad</p>
+          <p>Chetumal: 983 688 2211</p>
+          <p>Mérida: 999 930 1900</p>
+          <p>Valladolid: 985 856 1572</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Mérida</p></b>
+          <p>Licenciaturas</p>
+          <p>Maestrías</p>
+          <p>Diplomados</p>
+          <p>Especialidades</p>
+          <p>Programas en línea</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Chetumal</p></b>
+          <p>Licenciaturas</p>
+          <p>Programas en línea</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Valladolid</p></b>
+          <p>Licenciaturas</p>
+          <p>Programas en línea</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House info</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../styles/house-register-form/house-register-form.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../assets/Logo-modelo.png"
+            alt="Logo"
+            width="2000"
+            height="48"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown1"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Admisiones
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Formación integral
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown3"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">La universidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vida universitaria</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="register-form">
+      <h1>Casas</h1>
+      <h3>Formulario de registro</h3>
+    </div>
+    <div class="first-register-page">
+      <div class="circle">1</div>
+      <h3>Datos del propietario</h3>
+
+      <div>
+        <form class="form-one">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" required />
+
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required />
+
+          <!-- <button type="submit">Enviar</button> -->
+        </form>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="first-register-page">
+      <div class="circle">2</div>
+      <h3>Servicios incluidos</h3>
+      <form>
+        <fieldset class="available-services">
+          <div class="checkbox-group">
+            <input type="checkbox" id="agua" name="servicios" value="agua" />
+            <label for="agua">Agua</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="luz" name="servicios" value="luz" />
+            <label for="luz">Luz</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="internet"
+              name="servicios"
+              value="internet"
+            />
+            <label for="internet">Internet</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="amueblado"
+              name="servicios"
+              value="amueblado"
+            />
+            <label for="amueblado">Amueblado</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="estacionamiento"
+              name="servicios"
+              value="estacionamiento"
+            />
+            <label for="estacionamiento">Estacionamiento</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="recoleccion"
+              name="servicios"
+              value="recoleccion"
+            />
+            <label for="recoleccion">Recolección de basura</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="pet-friendly"
+              name="servicios"
+              value="pet-friendly"
+            />
+            <label for="pet-friendly">Pet Friendly</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="limpieza"
+              name="servicios"
+              value="limpieza"
+            />
+            <label for="limpieza">Limpieza</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="lavado"
+              name="servicios"
+              value="lavado"
+            />
+            <label for="lavado">Lavado</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="areas-comunes"
+              name="servicios"
+              value="areas-comunes"
+            />
+            <label for="areas-comunes">Áreas comunes</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="comida"
+              name="servicios"
+              value="comida"
+            />
+            <label for="comida">Comida</label>
+          </div>
+
+          <!-- <button type="submit">Enviar</button> -->
+        </fieldset>
+      </form>
+    </div>
+    <div class="divider"></div>
+    <div class="first-register-page">
+      <div class="circle">3</div>
+      <h3>Datos del lugar</h3>
+      <form>
+        <div class="form-group">
+          <label>Tipo de alojamiento</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="tipo_alojamiento" value="casa" />
+              Casa</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="tipo_alojamiento"
+                value="departamento"
+              />
+              Departamento</label
+            >
+            <label
+              ><input type="radio" name="tipo_alojamiento" value="cuarto" />
+              Cuarto</label
+            >
+          </div>
+          <div class="radio-group">
+            <label
+              ><input
+                type="radio"
+                name="tipo_alojamiento"
+                value="solo_mujeres"
+              />
+              Solo para mujeres</label
+            >
+            <label
+              ><input type="radio" name="tipo_alojamiento" value="con_roomie" />
+              Con roomie</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Precio</label>
+          <div class="price-group">
+            <span>$</span>
+            <input type="number" name="precio" placeholder="0" min="0" />
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Calle</label>
+          <input type="text" name="calle" placeholder="Nombre de la calle" />
+        </div>
+        <div class="form-group">
+          <label>Colonia</label>
+          <input
+            type="text"
+            name="colonia"
+            placeholder="Nombre de la colonia"
+          />
+        </div>
+        <div class="form-group">
+          <label>Cruzamientos</label>
+          <input
+            type="text"
+            name="cruzamientos"
+            placeholder="Calles cercanas"
+          />
+        </div>
+        <div class="form-group">
+          <label>Código postal</label>
+          <input type="text" name="codigo_postal" placeholder="00000" />
+        </div>
+      </form>
+    </div>
+    <div class="divider"></div>
+    <div class="first-register-page">
+      <div class="circle">4</div>
+      <h3>Publicación</h3>
+
+      <form action="">
+        <div class="thingy">
+          <label for="title">Título</label>
+          <input type="text" />
+        </div>
+        <div class="thingy">
+          <label for="description">Descripción</label>
+          <input type="text" />
+        </div>
+        <div class="thingy">
+            <label for="fotos">Fotos del alojamiento</label>
+            <input type="file">
+        </div>
+      </form>
+    </div>
+    <footer class="modelo-banner">
+        <div class="banner-item-first">
+          <img src="../assets/Logo-modelo.png" alt="" />
+          <div class="social-media">
+            <img src="../assets/fb.png" alt="" />
+            <img src="../assets/insta.png" alt="" />
+            <img src="../assets/twitter.png" alt="" />
+          </div>
+          <p>Aviso de privacidad</p>
+          <p>Chetumal: 983 688 2211</p>
+          <p>Mérida: 999 930 1900</p>
+          <p>Valladolid: 985 856 1572</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Mérida</p></b>
+          <p>Licenciaturas</p>
+          <p>Maestrías</p>
+          <p>Diplomados</p>
+          <p>Especialidades</p>
+          <p>Programas en línea</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Chetumal</p></b>
+          <p>Licenciaturas</p>
+          <p>Programas en línea</p>
+        </div>
+        <div class="banner-item">
+          <b><p>Valladolid</p></b>
+          <p>Licenciaturas</p>
+          <p>Programas en línea</p>
+        </div>
+      </footer>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
