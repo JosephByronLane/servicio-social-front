@@ -1,5 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
@@ -133,8 +138,10 @@
     // border: 1px solid blue;
     display: flex;
     width: 50%;
+    
 
     #house-price {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.06);
       margin: auto;
       align-self: center;
       justify-self: center;
@@ -168,11 +175,13 @@
 
 .owner-contact-info {
   padding: 100px;
+  
   .owner-info {
     h3 {
       padding: 10px;
       font-weight: 700;
     }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.06);
     padding: 30px 80px 30px 80px;
     border-radius: 15px;
     text-align: center;

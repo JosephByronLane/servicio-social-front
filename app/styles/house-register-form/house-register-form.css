@@ -11965,6 +11965,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
@@ -12050,6 +12055,7 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 30%;
   gap: 15px;
+  font-size: 22px;
 }
 .form-one label {
   color: #061f57;
@@ -12094,11 +12100,30 @@ textarea.form-control-lg {
   font-size: 14px;
 }
 .form-group input[type=radio] {
-  margin-right: 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input[type=radio]:checked {
+  background-color: #29abe2;
 }
 .form-group .radio-group {
   display: flex;
-  gap: 10px;
+  gap: 40px;
+}
+.form-group .radio-group label {
+  display: flex;
+  font-weight: 300;
+  align-items: center;
+  gap: 20px;
 }
 
 .price-group {
@@ -12122,6 +12147,90 @@ textarea.form-control-lg {
 .thingy input {
   border: none;
   border-radius: 15px;
+}
+
+#dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  background-color: #f4f4f4;
+  border: 2px dashed #061f57;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 80px;
+  justify-self: center;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#dropZone label {
+  align-self: center;
+  padding: 0;
+}
+#dropZone.dragover {
+  background-color: #e6f7ff;
+}
+#dropZone .upload-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#dropZone p {
+  font-size: 14px;
+  color: #061f57;
+  font-weight: 600;
+}
+#dropZone button {
+  background-color: #061f57;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#dropZone button:hover {
+  background-color: #29abe2;
+}
+#dropZone input[type=file] {
+  display: none;
+}
+#dropZone #previewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+#dropZone #previewContainer img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.send-data-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.send-data-button .send-data {
+  background-color: #29abe2;
+  padding: 30px 50px 30px 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-self: center;
+  align-self: center;
+  font-size: 24px;
+  border-radius: 15px;
+  border: none;
+  color: white;
 }
 
 .modelo-banner {

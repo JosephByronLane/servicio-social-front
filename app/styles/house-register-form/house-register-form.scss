@@ -1,5 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
@@ -96,6 +101,7 @@
   flex-direction: column;
   width: 30%;
   gap: 15px;
+  font-size: 22px;
   label {
     color: #061f57;
     font-weight: 700;
@@ -116,116 +122,229 @@
 
   .checkbox-group {
     input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        accent-color: #29abe2; /* Cambia el color del checkbox */
-        cursor: pointer;
-        border: none;
+      width: 20px;
+      height: 20px;
+      accent-color: #29abe2; /* Cambia el color del checkbox */
+      cursor: pointer;
+      border: none;
     }
   }
 }
 
 .form-group {
-    margin-bottom: 15px;
-    font-size: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  // gap: 10px;
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #061f57;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  input[type="radio"] {
+    appearance: none; // Remove default styling
+    width: 24px;
+    height: 24px;
+    background-color: white; // Default background
+    border-radius: 50%; // Make it circular
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:checked {
+      background-color: #29abe2; // Custom color when selected
+    }
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 40px;
 
     label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: #061f57;
+      display: flex;
+      font-weight: 300;
+      align-items: center;
+      gap: 20px;
     }
-
-    input[type="text"],
-    input[type="number"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #e2e8f0;
-        border-radius: 4px;
-        font-size: 14px;
-    }
-
-    input[type="radio"] {
-        margin-right: 10px;
-    }
-
-    .radio-group {
-        display: flex;
-        gap: 10px;
-    }
+  }
 }
 
 .price-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 
-    input {
-        flex: 1;
-    }
+  input {
+    flex: 1;
+  }
 }
 
 .thingy {
-    color: #061f57;
-    font-weight: 700;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
+  color: #061f57;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
 
-    input {
-        border: none;
-        border-radius: 15px;
+  input {
+    border: none;
+    border-radius: 15px;
+  }
+}
+
+#dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  background-color: #f4f4f4;
+  border: 2px dashed #061f57;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 80px;
+  justify-self: center;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  label {
+    align-self: center;
+    padding: 0;
+  }
+
+  &.dragover {
+    background-color: #e6f7ff; // Highlight when dragging over
+  }
+
+  .upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #061f57;
+    font-weight: 600;
+  }
+
+  button {
+    background-color: #061f57;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #29abe2;
     }
+  }
+
+  input[type="file"] {
+    display: none; // Hide the default file input
+  }
+
+  #previewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.send-data-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .send-data {
+    background-color: #29abe2;
+    padding: 30px 50px 30px 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    justify-self: center;
+    align-self: center;
+    font-size: 24px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+  }
 }
 
 .modelo-banner {
-    background-color: #061f57;
-    color: white;
+  background-color: #061f57;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 80px 50px 80px;
+  align-items: flex-start;
+
+  .banner-item-first {
+    text-align: center;
     display: flex;
-    justify-content: space-evenly;
-    padding: 50px 80px 50px 80px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    // border: 1px solid white;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
 
-    .banner-item-first {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      // border: 1px solid white;
-      width: fit-content;
-      justify-content: center;
-      align-items: center;
-
-      img {
-        width: 200px;
-      }
-
-      .social-media {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        margin: auto;
-
-        img {
-          width: 30px;
-        }
-      }
+    img {
+      width: 200px;
     }
 
-    .banner-item {
+    .social-media {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-      // border: 1px solid white;
-      width: fit-content;
-      justify-content: center;
-      align-items: flex-start;
-      
+      flex-direction: row;
+      gap: 20px;
+      margin: auto;
+
       img {
-        width: 200px;
-        height: auto;
+        width: 30px;
       }
     }
   }
+
+  .banner-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    // border: 1px solid white;
+    width: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+}

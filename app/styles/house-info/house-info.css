@@ -11965,6 +11965,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
@@ -12079,6 +12084,7 @@ textarea.form-control-lg {
   width: 50%;
 }
 .services .right-container #house-price {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.06);
   margin: auto;
   align-self: center;
   justify-self: center;
@@ -12110,6 +12116,7 @@ textarea.form-control-lg {
   padding: 100px;
 }
 .owner-contact-info .owner-info {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 30px 80px 30px 80px;
   border-radius: 15px;
   text-align: center;

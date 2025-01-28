@@ -2,12 +2,17 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
   font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  // font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  //   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   .navbar-brand {
     img {
@@ -43,8 +48,8 @@
 }
 
 .master-container {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  // font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  //   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   // padding-top: px;
 
   .top-content {
@@ -111,7 +116,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     .search-bar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
       position: relative;
       width: 900px;
       font-size: 24px;
@@ -174,12 +181,19 @@
       color: #061f57;
       background-color: white;
       border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #29aae246;
+      }
 
       img {
         width: 50px;
         height: 50px;
         object-fit: contain;
-        // border: 1px solid red;
       }
     }
   }
@@ -234,11 +248,11 @@
     }
 
     .filter-buttons {
-      padding-top: 40px;
+      padding-top: px;
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 25px;
 
       button {
         display: flex;
@@ -250,12 +264,12 @@
         background-color: #061f57;
         color: white;
         font-weight: 700;
-        padding: 10px 30px 10px 30px;
+        padding: 10px 25px 10px 25px;
         gap: 20px;
 
         img {
-          width: 35px;
-          height: 35px;
+          width: 30px;
+          height: 30px;
           object-fit: contain;
         }
       }
@@ -275,6 +289,7 @@
       justify-items: center;
       gap: 20px;
       padding-top: 50px;
+      
 
       .house {
         display: flex;
@@ -282,9 +297,10 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
+        
 
         p {
-          font-weight: 100;
+          font-weight: 300;
           font-size: 18px;
         }
 
@@ -300,15 +316,17 @@
           font-size: x-large;
         }
 
-        hr {
+        .divider {
           border: 3px solid #061f57;
           width: 280px;
           height: 5px;
+          margin: 15px 0 15px 0;
           background-color: #061f57;
         }
         img {
           width: 400px;
           height: auto;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
         }
       }
     }
@@ -356,7 +374,7 @@
       width: fit-content;
       justify-content: center;
       align-items: flex-start;
-      
+
       img {
         width: 200px;
         height: auto;

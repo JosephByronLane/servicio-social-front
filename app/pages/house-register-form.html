@@ -333,45 +333,57 @@
           <label for="description">Descripción</label>
           <input type="text" />
         </div>
-        <div class="thingy">
-            <label for="fotos">Fotos del alojamiento</label>
-            <input type="file">
+        <div class="thingy" id="dropZone">
+          <label for="photos">Fotos del alojamiento</label>
+          <img
+            src="../assets/upload.jpeg"
+            alt="Upload Icon"
+            class="upload-icon"
+          />
+          <p>Arrastra & suelta archivo<br />o</p>
+          <button id="selectFileButton">Seleccionar archivo</button>
+          <input type="file" id="fileInput" accept="image/*" multiple />
+          <div id="previewContainer"></div>
         </div>
       </form>
     </div>
+    <div class="send-data-button">
+      <button class="send-data">Enviar datos</button>
+    </div>
     <footer class="modelo-banner">
-        <div class="banner-item-first">
-          <img src="../assets/Logo-modelo.png" alt="" />
-          <div class="social-media">
-            <img src="../assets/fb.png" alt="" />
-            <img src="../assets/insta.png" alt="" />
-            <img src="../assets/twitter.png" alt="" />
-          </div>
-          <p>Aviso de privacidad</p>
-          <p>Chetumal: 983 688 2211</p>
-          <p>Mérida: 999 930 1900</p>
-          <p>Valladolid: 985 856 1572</p>
+      <div class="banner-item-first">
+        <img src="../assets/Logo-modelo.png" alt="" />
+        <div class="social-media">
+          <img src="../assets/fb.png" alt="" />
+          <img src="../assets/insta.png" alt="" />
+          <img src="../assets/twitter.png" alt="" />
         </div>
-        <div class="banner-item">
-          <b><p>Mérida</p></b>
-          <p>Licenciaturas</p>
-          <p>Maestrías</p>
-          <p>Diplomados</p>
-          <p>Especialidades</p>
-          <p>Programas en línea</p>
-        </div>
-        <div class="banner-item">
-          <b><p>Chetumal</p></b>
-          <p>Licenciaturas</p>
-          <p>Programas en línea</p>
-        </div>
-        <div class="banner-item">
-          <b><p>Valladolid</p></b>
-          <p>Licenciaturas</p>
-          <p>Programas en línea</p>
-        </div>
-      </footer>
+        <p>Aviso de privacidad</p>
+        <p>Chetumal: 983 688 2211</p>
+        <p>Mérida: 999 930 1900</p>
+        <p>Valladolid: 985 856 1572</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Mérida</p></b>
+        <p>Licenciaturas</p>
+        <p>Maestrías</p>
+        <p>Diplomados</p>
+        <p>Especialidades</p>
+        <p>Programas en línea</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Chetumal</p></b>
+        <p>Licenciaturas</p>
+        <p>Programas en línea</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Valladolid</p></b>
+        <p>Licenciaturas</p>
+        <p>Programas en línea</p>
+      </div>
+    </footer>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/house-register-form/house-register-form-scripts.js"></script>
   </body>
 </html>

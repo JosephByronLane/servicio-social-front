@@ -11965,11 +11965,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .custom-navbar {
   background-color: #061f57;
   color: white;
   font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .custom-navbar .navbar-brand img {
   max-width: 180px;
@@ -11997,9 +12001,6 @@ textarea.form-control-lg {
   background-color: #cccccc;
 }
 
-.master-container {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
 .master-container .top-content {
   display: flex;
   flex-direction: row;
@@ -12053,6 +12054,7 @@ textarea.form-control-lg {
   justify-content: center;
 }
 .master-container .buscar-casa .search-bar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
   position: relative;
   width: 900px;
   font-size: 24px;
@@ -12109,6 +12111,13 @@ textarea.form-control-lg {
   color: #061f57;
   background-color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.master-container .housing-type .housing-type-button:hover {
+  background-color: rgba(41, 170, 226, 0.2745098039);
 }
 .master-container .housing-type .housing-type-button img {
   width: 50px;
@@ -12163,11 +12172,11 @@ textarea.form-control-lg {
   width: 150px;
 }
 .master-container .filters .filter-buttons {
-  padding-top: 40px;
+  padding-top: px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 25px;
 }
 .master-container .filters .filter-buttons button {
   display: flex;
@@ -12179,12 +12188,12 @@ textarea.form-control-lg {
   background-color: #061f57;
   color: white;
   font-weight: 700;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 25px 10px 25px;
   gap: 20px;
 }
 .master-container .filters .filter-buttons button img {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -12209,7 +12218,7 @@ textarea.form-control-lg {
   text-align: center;
 }
 .master-container .showroom .house-images .house p {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 18px;
 }
 .master-container .showroom .house-images .house h3, .master-container .showroom .house-images .house .h3 {
@@ -12222,15 +12231,17 @@ textarea.form-control-lg {
   color: #29abe2;
   font-size: x-large;
 }
-.master-container .showroom .house-images .house hr {
+.master-container .showroom .house-images .house .divider {
   border: 3px solid #061f57;
   width: 280px;
   height: 5px;
+  margin: 15px 0 15px 0;
   background-color: #061f57;
 }
 .master-container .showroom .house-images .house img {
   width: 400px;
   height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 .master-container .modelo-banner {
   background-color: #061f57;
