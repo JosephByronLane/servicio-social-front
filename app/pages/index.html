@@ -114,8 +114,8 @@
     <div class="master-container">
       <div class="top-content">
         <div class="left-container">
-          <h1>Casas</h1>
-          <h3>¿En búsqueda de un lugar para vivir en Mérida?</h3>
+          <h1>En búsqueda de un lugar para vivir...</h1>
+          <!-- <h3>¿En búsqueda de un lugar para vivir en Mérida?</h3> -->
           <br />
           <p>
             Ponemos a tu disposición este sitio que pretende conectar a la
@@ -149,33 +149,20 @@
           estudiantes.
         </p>
       </div>
-      <div class="buscar-casa">
-        <form class="search-bar" action="/search" method="GET">
-          <input
-            type="text"
-            class="search-input"
-            name="q"
-            placeholder="Buscar Casa"
-          />
-          <button type="submit" class="search-button">
-            <img src="../assets/search.png" alt="" />
-          </button>
-        </form>
-      </div>
-
+      <h4 id="filter-title">Selecciona la opción que mejor se adapte a tus necesidades.</h6>
       <div class="housing-type">
         <button class="housing-type-button">
-          Casas
+          Casa
           <img src="../assets/casa.png" alt="" />
         </button>
 
         <button class="housing-type-button">
-          Departamentos
+          Departamento
           <img src="../assets/depa.png" alt="" />
         </button>
 
         <button class="housing-type-button">
-          Cuartos
+          Cuarto
           <img src="../assets/cil_room.png" alt="" />
         </button>
 
@@ -193,6 +180,21 @@
           Con roomie
           <img src="../assets/roomie.png" alt="" />
         </button>
+      </div>
+
+      <div class="buscar-casa">
+        <h4>Si conoces el nombre de la colonia, ingrésalo aquí.</h4>
+        <form class="search-bar" action="/search" method="GET">
+          <input
+            type="text"
+            class="search-input"
+            name="q"
+            placeholder="Buscar Casa"
+          />
+          <button type="submit" class="search-button">
+            <img src="../assets/search.png" alt="" />
+          </button>
+        </form>
       </div>
       <div class="filters">
         <h2>Filtros</h2>
@@ -217,7 +219,7 @@
           </div>
         </div>
         <div class="filter-buttons">
-          <button>
+          <button class="toggle-button">
             Amueblado
             <img
               src="../assets/filter-buttons/material-symbols_bed.png"
@@ -225,12 +227,12 @@
             />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Limpieza
             <img src="../assets/filter-buttons/mdi_broom.png" alt="" />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Internet
             <img
               src="../assets/filter-buttons/material-symbols_wifi.png"
@@ -238,12 +240,12 @@
             />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Agua
             <img src="../assets/filter-buttons/mdi_water.png" alt="" />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Luz
             <img
               src="../assets/filter-buttons/material-symbols_lightbulb.png"
@@ -251,7 +253,7 @@
             />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Lavado
             <img
               src="../assets/filter-buttons/lsicon_clothes-filled.png"
@@ -259,22 +261,22 @@
             />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Estacionamiento
             <img src="../assets/filter-buttons/mdi_car.png" alt="" />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Comida
             <img src="../assets/filter-buttons/fa6-solid_utensils.png" alt="" />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Recolección de basura
             <img src="../assets/filter-buttons/mdi_trash.png" alt="" />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Pet friendly
             <img
               src="../assets/filter-buttons/streamline_pet-paw-solid.png"
@@ -282,7 +284,7 @@
             />
           </button>
 
-          <button>
+          <button class="toggle-button">
             Áreas comunes
             <img
               src="../assets/filter-buttons/material-symbols_pool.png"
@@ -296,7 +298,12 @@
 
         <div class="house-images">
           <div class="house" id="house-details-1">
-            <img src="../assets/casa-1.png" alt="" id="house-image-1" onclick="window.location.href='../pages/house-info.html'"/>
+            <img
+              src="../assets/casa-1.png"
+              alt=""
+              id="house-image-1"
+              onclick="window.location.href='../pages/house-info.html'"
+            />
             <h3 id="house-name-1">Departamento en Altabrisa</h3>
             <h6 id="house-price-1">$7,500 MXN al mes</h6>
             <div class="divider"></div>
@@ -307,7 +314,12 @@
           </div>
 
           <div class="house" id="house-details-2">
-            <img src="../assets/casa-2.png" alt="" id="house-image-2" onclick="window.location.href='../pages/house-info.html'"/>
+            <img
+              src="../assets/casa-2.png"
+              alt=""
+              id="house-image-2"
+              onclick="window.location.href='../pages/house-info.html'"
+            />
             <h3 id="house-name-2">Departamento en Altabrisa</h3>
             <h6 id="house-price-2">$7,500 MXN al mes</h6>
             <div class="divider"></div>
@@ -318,7 +330,12 @@
           </div>
 
           <div class="house" id="house-details-3">
-            <img src="../assets/casa-3.png" alt="" id="house-image-3" onclick="window.location.href='../pages/house-info.html'"/>
+            <img
+              src="../assets/casa-3.png"
+              alt=""
+              id="house-image-3"
+              onclick="window.location.href='../pages/house-info.html'"
+            />
             <h3 id="house-name-3">Departamento en Altabrisa</h3>
             <h6 id="house-price-3">$7,500 MXN al mes</h6>
             <div class="divider"></div>
@@ -328,6 +345,15 @@
             </p>
           </div>
         </div>
+      </div>
+
+      <div class="register-delete-buttons">
+        <button
+          onclick="window.location.href='../pages/house-register-form.html'"
+        >
+          <u>Haz clic aquí</u> para agregar una vivienda.
+        </button>
+        <button><u>Haz clic aquí</u> para borrar una vivienda.</button>
       </div>
 
       <footer class="modelo-banner">
@@ -364,6 +390,7 @@
       </footer>
     </div>
 
+    <script src="../scripts/main-page/index-scripts.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

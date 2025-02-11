@@ -12021,17 +12021,31 @@ body {
   font-weight: 300;
 }
 .master-container .top-content .left-container .see-more-button {
-  padding: 25px 30px 25px 30px;
+  padding: 25px 30px;
   margin-top: 10px;
   display: flex;
-  align-items: center baseline;
+  align-items: center;
   gap: 40px;
   border-radius: 10px;
-  border: none;
+  border: 2px solid #29abe2;
   background-color: #29abe2;
   color: white;
   font-weight: 500;
   font-size: 24px;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.master-container .top-content .left-container .see-more-button img {
+  width: 20px;
+  height: 40px;
+  transition: opacity 0.2s ease-in-out;
+}
+.master-container .top-content .left-container .see-more-button:hover {
+  border: 2px solid #29abe2;
+  color: #29abe2;
+  background-color: white;
+}
+.master-container .top-content .left-container .see-more-button:hover img {
+  content: url("../../assets/filter-buttons/weui_arrow-filled.svg");
 }
 .master-container .top-content .right-container {
   position: relative;
@@ -12052,6 +12066,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 50px 50px 50px;
+}
+.master-container .buscar-casa h4, .master-container .buscar-casa .h4 {
+  color: gray;
 }
 .master-container .buscar-casa .search-bar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -12093,16 +12113,24 @@ body {
   height: 20px;
   fill: white;
 }
+.master-container #filter-title {
+  align-self: center;
+  justify-self: center;
+  color: gray;
+  border-top: 2px solid lightgray;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+}
 .master-container .housing-type {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 30px;
-  border-top: 2px solid lightgray;
-  padding-top: 60px;
   padding-bottom: 60px;
 }
 .master-container .housing-type .housing-type-button {
   display: flex;
+  width: 180px;
+  height: 180px;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
@@ -12114,9 +12142,13 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .master-container .housing-type .housing-type-button:hover {
+  background-color: rgba(41, 170, 226, 0.2745098039);
+}
+.master-container .housing-type .housing-type-button.active {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   background-color: rgba(41, 170, 226, 0.2745098039);
 }
 .master-container .housing-type .housing-type-button img {
@@ -12172,78 +12204,123 @@ body {
   width: 150px;
 }
 .master-container .filters .filter-buttons {
-  padding-top: px;
+  padding-top: 60px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 25px;
 }
-.master-container .filters .filter-buttons button {
+.master-container .filters .filter-buttons .toggle-button {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: center baseline;
+  justify-content: center;
   border-radius: 30px;
   border: none;
   background-color: #061f57;
   color: white;
   font-weight: 700;
-  padding: 10px 25px 10px 25px;
+  padding: 10px 25px;
   gap: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-.master-container .filters .filter-buttons button img {
+.master-container .filters .filter-buttons .toggle-button img {
   width: 30px;
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
+  transition: opacity 0.2s ease-in-out;
 }
-.master-container .showroom {
+.master-container .filters .filter-buttons .toggle-button.active {
+  background-color: white;
+  color: #061f57;
+}
+
+.showroom {
   padding: 100px;
 }
-.master-container .showroom h1, .master-container .showroom .h1 {
+.showroom h1, .showroom .h1 {
   font-weight: 700;
   color: #061f57;
 }
-.master-container .showroom .house-images {
-  display: flex;
-  justify-items: center;
+.showroom .house-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding-top: 50px;
+  overflow-y: auto;
+  max-height: 80vh;
 }
-.master-container .showroom .house-images .house {
+.showroom .house-images .house {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.master-container .showroom .house-images .house p {
+.showroom .house-images .house:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.showroom .house-images .house p {
   font-weight: 300;
   font-size: 18px;
+  padding: 0 10px 10px;
+  color: #777;
 }
-.master-container .showroom .house-images .house h3, .master-container .showroom .house-images .house .h3 {
+.showroom .house-images .house h3, .showroom .house-images .house .h3 {
   padding: 10px 0 10px 0;
   font-size: 24px;
   font-weight: 700;
   color: #061f57;
 }
-.master-container .showroom .house-images .house h6, .master-container .showroom .house-images .house .h6 {
+.showroom .house-images .house h6, .showroom .house-images .house .h6 {
   color: #29abe2;
   font-size: x-large;
+  margin: 0 0 10px;
 }
-.master-container .showroom .house-images .house .divider {
+.showroom .house-images .house .divider {
   border: 3px solid #061f57;
   width: 280px;
   height: 5px;
   margin: 15px 0 15px 0;
   background-color: #061f57;
 }
-.master-container .showroom .house-images .house img {
-  width: 400px;
-  height: auto;
+.showroom .house-images .house img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
-.master-container .modelo-banner {
+
+.register-delete-buttons {
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.register-delete-buttons button {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+}
+.register-delete-buttons button:hover {
+  color: #29abe2;
+}
+
+.modelo-banner {
   background-color: #061f57;
   color: white;
   display: flex;
@@ -12251,7 +12328,7 @@ body {
   padding: 50px 80px 50px 80px;
   align-items: flex-start;
 }
-.master-container .modelo-banner .banner-item-first {
+.modelo-banner .banner-item-first {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -12261,19 +12338,19 @@ body {
   justify-content: center;
   align-items: center;
 }
-.master-container .modelo-banner .banner-item-first img {
+.modelo-banner .banner-item-first img {
   width: 200px;
 }
-.master-container .modelo-banner .banner-item-first .social-media {
+.modelo-banner .banner-item-first .social-media {
   display: flex;
   flex-direction: row;
   gap: 20px;
   margin: auto;
 }
-.master-container .modelo-banner .banner-item-first .social-media img {
+.modelo-banner .banner-item-first .social-media img {
   width: 30px;
 }
-.master-container .modelo-banner .banner-item {
+.modelo-banner .banner-item {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -12282,7 +12359,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-.master-container .modelo-banner .banner-item img {
+.modelo-banner .banner-item img {
   width: 200px;
   height: auto;
 }/*# sourceMappingURL=index-styles.css.map */

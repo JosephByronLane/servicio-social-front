@@ -12018,11 +12018,22 @@ body {
 
 .first-register-page {
   background-color: #ededed;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 0 100px 100px 100px;
+  align-items: center;
+  justify-content: first baseline;
+}
+.first-register-page .housing-extra-options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
 }
 .first-register-page .circle {
   transform: translate(0, -50%);
+  align-self: first baseline;
   font-weight: 700;
   color: #061f57;
   font-size: 56px;
@@ -12053,7 +12064,7 @@ body {
 .form-one {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%;
   gap: 15px;
   font-size: 22px;
 }
@@ -12063,7 +12074,7 @@ body {
 }
 .form-one input {
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .available-services {
@@ -12076,7 +12087,7 @@ body {
 .available-services .checkbox-group input[type=checkbox] {
   width: 20px;
   height: 20px;
-  accent-color: #29abe2; /* Cambia el color del checkbox */
+  accent-color: #29abe2;
   cursor: pointer;
   border: none;
 }
@@ -12096,7 +12107,7 @@ body {
   width: 100%;
   padding: 10px;
   border: 1px solid #e2e8f0;
-  border-radius: 4px;
+  border-radius: 25px;
   font-size: 14px;
 }
 .form-group input[type=radio] {
@@ -12148,6 +12159,10 @@ body {
   border: none;
   border-radius: 15px;
 }
+.thingy textarea {
+  border: none;
+  border-radius: 15px;
+}
 
 #dropZone {
   display: flex;
@@ -12155,12 +12170,12 @@ body {
   align-items: center;
   justify-content: center;
   width: 300px;
-  height: 200px;
+  height: auto;
   background-color: #f4f4f4;
   border: 2px dashed #061f57;
   border-radius: 12px;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 15px;
   justify-self: center;
   text-align: center;
   cursor: pointer;
@@ -12219,16 +12234,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+  gap: 30px;
+}
+.send-data-button h6, .send-data-button .h6 {
+  color: gray;
+  font-weight: 300;
 }
 .send-data-button .send-data {
   background-color: #29abe2;
   padding: 30px 50px 30px 50px;
   margin-top: 100px;
-  margin-bottom: 100px;
   justify-self: center;
   align-self: center;
   font-size: 24px;
-  border-radius: 15px;
+  border-radius: 25px;
   border: none;
   color: white;
 }

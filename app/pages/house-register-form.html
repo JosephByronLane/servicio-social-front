@@ -140,12 +140,17 @@
       <form>
         <fieldset class="available-services">
           <div class="checkbox-group">
-            <input type="checkbox" id="agua" name="servicios" value="agua" />
-            <label for="agua">Agua</label>
+            <input type="checkbox" id="agua" name="servicios" value="water" />
+            <label for="water">Agua</label>
           </div>
 
           <div class="checkbox-group">
-            <input type="checkbox" id="luz" name="servicios" value="luz" />
+            <input
+              type="checkbox"
+              id="luz"
+              name="servicios"
+              value="electricity"
+            />
             <label for="luz">Luz</label>
           </div>
 
@@ -164,7 +169,7 @@
               type="checkbox"
               id="amueblado"
               name="servicios"
-              value="amueblado"
+              value="furnishings"
             />
             <label for="amueblado">Amueblado</label>
           </div>
@@ -174,7 +179,7 @@
               type="checkbox"
               id="estacionamiento"
               name="servicios"
-              value="estacionamiento"
+              value="parking"
             />
             <label for="estacionamiento">Estacionamiento</label>
           </div>
@@ -184,7 +189,7 @@
               type="checkbox"
               id="recoleccion"
               name="servicios"
-              value="recoleccion"
+              value="garbage collection"
             />
             <label for="recoleccion">Recolección de basura</label>
           </div>
@@ -194,7 +199,7 @@
               type="checkbox"
               id="pet-friendly"
               name="servicios"
-              value="pet-friendly"
+              value="pet friendly"
             />
             <label for="pet-friendly">Pet Friendly</label>
           </div>
@@ -204,7 +209,7 @@
               type="checkbox"
               id="limpieza"
               name="servicios"
-              value="limpieza"
+              value="cleaning service"
             />
             <label for="limpieza">Limpieza</label>
           </div>
@@ -214,7 +219,7 @@
               type="checkbox"
               id="lavado"
               name="servicios"
-              value="lavado"
+              value="washing service"
             />
             <label for="lavado">Lavado</label>
           </div>
@@ -224,7 +229,7 @@
               type="checkbox"
               id="areas-comunes"
               name="servicios"
-              value="areas-comunes"
+              value="communal areas"
             />
             <label for="areas-comunes">Áreas comunes</label>
           </div>
@@ -234,7 +239,7 @@
               type="checkbox"
               id="comida"
               name="servicios"
-              value="comida"
+              value="food"
             />
             <label for="comida">Comida</label>
           </div>
@@ -251,36 +256,43 @@
         <div class="form-group">
           <label>Tipo de alojamiento</label>
           <div class="radio-group">
-            <label
-              ><input type="radio" name="tipo_alojamiento" value="casa" />
-              Casa</label
-            >
-            <label
-              ><input
+            <label>
+              <input type="radio" name="tipo_alojamiento" value="Casa" />
+              Casa
+            </label>
+            <label>
+              <input
                 type="radio"
                 name="tipo_alojamiento"
-                value="departamento"
+                value="Departamento"
               />
-              Departamento</label
-            >
-            <label
-              ><input type="radio" name="tipo_alojamiento" value="cuarto" />
-              Cuarto</label
-            >
+              Departamento
+            </label>
+            <label>
+              <input type="radio" name="tipo_alojamiento" value="Cuarto" />
+              Cuarto
+            </label>
           </div>
-          <div class="radio-group">
-            <label
-              ><input
-                type="radio"
-                name="tipo_alojamiento"
-                value="solo_mujeres"
-              />
-              Solo para mujeres</label
-            >
-            <label
-              ><input type="radio" name="tipo_alojamiento" value="con_roomie" />
-              Con roomie</label
-            >
+        </div>
+        <div class="housing-extra-options">
+          <div class="form-group">
+            <!-- <label>Solo para mujeres</label> -->
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="solo_mujeres" value="solo_mujeres" />
+                Solo para mujeres
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <!-- <label>Con roomie</label> -->
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="con_roomie" value="con_roomie" />
+                Con roomie
+              </label>
+            </div>
           </div>
         </div>
 
@@ -324,14 +336,14 @@
       <div class="circle">4</div>
       <h3>Publicación</h3>
 
-      <form action="">
+      <form action="" class="thingy">
         <div class="thingy">
           <label for="title">Título</label>
-          <input type="text" />
+          <input type="text" name="title" />
         </div>
         <div class="thingy">
           <label for="description">Descripción</label>
-          <input type="text" />
+          <textarea name="description" id=""></textarea>
         </div>
         <div class="thingy" id="dropZone">
           <label for="photos">Fotos del alojamiento</label>
@@ -340,7 +352,7 @@
             alt="Upload Icon"
             class="upload-icon"
           />
-          <p>Arrastra & suelta archivo<br />o</p>
+          <p>Arrastra y suelta tus archivos<br />o</p>
           <button id="selectFileButton">Seleccionar archivo</button>
           <input type="file" id="fileInput" accept="image/*" multiple />
           <div id="previewContainer"></div>
@@ -349,6 +361,11 @@
     </div>
     <div class="send-data-button">
       <button class="send-data">Enviar datos</button>
+
+      <h6>
+        En 30 días te enviaremos un correo para saber si hay novedades sobre tu
+        alojamiento.
+      </h6>
     </div>
     <footer class="modelo-banner">
       <div class="banner-item-first">
