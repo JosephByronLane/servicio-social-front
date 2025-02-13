@@ -26,7 +26,6 @@ jobs:
         docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }} .
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
 
-
     - name: Deploy to AWS Lightsail
       env:
         SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
@@ -38,7 +37,9 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SSH_USER@$SSH_HOST << 'EOF'
         cd /home/${{ secrets.LIGHTSAIL_SSH_USER }}/app
-        sudo docker stop ${{ secrets.DOCKERHUB_USERNAME }}/${{SECRETS.DOCKERHUB_REPOSITORY}} || true
+        # Stop and remove the old container if it exists
+        sudo docker stop servicio-container || true
+        sudo docker rm servicio-container || true
         sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
         sudo docker run -d --name servicio-container -p 80:80 --restart unless-stopped ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
         EOF
