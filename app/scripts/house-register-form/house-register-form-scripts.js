@@ -1,116 +1,107 @@
+// Constantes y elementos del DOM
 const dropZone = document.getElementById("dropZone");
 const fileInput = document.getElementById("fileInput");
-const button = document.getElementById("selectFileButton");
+const selectFileButton = document.getElementById("selectFileButton");
 const previewContainer = document.createElement("div");
 const gallery = document.getElementById("previewContainer");
+const sendDataButton = document.querySelector(".send-data");
 
+let tempId = null;
+
+// Configuración inicial del contenedor de previsualización
 previewContainer.style.display = "flex";
 previewContainer.style.flexWrap = "wrap";
 previewContainer.style.marginTop = "20px";
 dropZone.appendChild(previewContainer);
 
-let tempId = null;
+// Crear el tempId cuando la página cargue
+window.onload = createTempId;
 
-document
-  .querySelectorAll(".housing-extra-options input[type='radio']")
-  .forEach((radio) => {
-    radio.addEventListener("click", function (e) {
-      if (this.checked) {
-        if (this.dataset.clicked === "true") {
-          this.checked = false; // Uncheck if clicked again
-          this.dataset.clicked = "false";
-        } else {
-          this.dataset.clicked = "true"; // Mark as clicked once
-        }
-      }
-    });
-  });
+// Event listeners
+selectFileButton.addEventListener("click", handleSelectFileButtonClick);
+dropZone.addEventListener("dragover", handleDragOver);
+dropZone.addEventListener("dragleave", handleDragLeave);
+dropZone.addEventListener("drop", handleDrop);
+fileInput.addEventListener("change", handleFileInputChange);
+sendDataButton.addEventListener("click", handleSendDataButtonClick);
 
-// Create the tempId when the page loads
+// Funciones principales
 async function createTempId() {
   try {
     const response = await fetch("http://servicio.runefx.org/image/upload", {
       method: "POST",
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to create tempId");
-    }
+    if (!response.ok) throw new Error("No se pudo crear el ID temporal.");
 
     const data = await response.json();
     tempId = data.tempId;
-    console.log("Temp ID created:", tempId);
+    console.log("ID temporal creado: ", tempId);
   } catch (error) {
-    console.error("Error creating tempId:", error);
+    console.error("Error al crear el ID temporal: ", error);
   }
 }
 
-window.onload = createTempId;
-
-button.addEventListener("click", (event) => {
+function handleSelectFileButtonClick(event) {
   event.preventDefault();
   fileInput.click();
-});
+}
 
-dropZone.addEventListener("dragover", (event) => {
+function handleDragOver(event) {
   event.preventDefault();
   dropZone.classList.add("dragover");
-});
+}
 
-dropZone.addEventListener("dragleave", () => {
+function handleDragLeave() {
   dropZone.classList.remove("dragover");
-});
+}
 
-dropZone.addEventListener("drop", (event) => {
+function handleDrop(event) {
   event.preventDefault();
   dropZone.classList.remove("dragover");
   const files = Array.from(event.dataTransfer.files);
   handleFiles(files);
-});
+}
 
-fileInput.addEventListener("change", (event) => {
+function handleFileInputChange(event) {
   const files = Array.from(event.target.files);
   handleFiles(files);
-});
+}
 
 function handleFiles(files) {
   if (!tempId) {
-    alert("Temp ID not created yet. Please reload the page.");
+    alert("Por favor, recargue la página.");
     return;
   }
 
   const formData = new FormData();
-
   files.forEach((file) => {
     if (file.type.startsWith("image/")) {
-      formData.append("images", file); // Key should match backend expectation
-
-      // Preview the image
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const img = document.createElement("img");
-        img.src = event.target.result;
-        img.alt = file.name;
-        img.style.width = "100px";
-        img.style.height = "100px";
-        img.style.objectFit = "cover";
-        img.style.margin = "10px";
-        img.style.border = "1px solid #ccc";
-        img.style.borderRadius = "8px";
-        previewContainer.appendChild(img);
-      };
-      reader.readAsDataURL(file);
+      formData.append("images", file);
+      previewImage(file);
     } else {
-      console.error("Only images are allowed!");
+      alert("Solamente se permiten imágenes archivos .jpeg o .png");
     }
   });
 
-  console.log("FormData content before upload:");
-  for (let pair of formData.entries()) {
-    console.log(pair[0], pair[1]);
-  }
-
   uploadImages(formData);
+}
+
+function previewImage(file) {
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    const img = document.createElement("img");
+    img.src = event.target.result;
+    img.alt = file.name;
+    img.style.width = "100px";
+    img.style.height = "100px";
+    img.style.objectFit = "cover";
+    img.style.margin = "10px";
+    img.style.border = "1px solid #ccc";
+    img.style.borderRadius = "8px";
+    previewContainer.appendChild(img);
+  };
+  reader.readAsDataURL(file);
 }
 
 async function uploadImages(formData) {
@@ -124,12 +115,12 @@ async function uploadImages(formData) {
       `http://servicio.runefx.org/image/upload/${tempId}`,
       {
         method: "POST",
-        body: formData, // Don't set Content-Type; the browser sets it automatically for FormData
+        body: formData,
       }
     );
 
     if (!response.ok) {
-      const errorText = await response.text(); // Read the error response
+      const errorText = await response.text();
       console.error("Image upload failed:", errorText);
       throw new Error(errorText);
     }
@@ -138,7 +129,7 @@ async function uploadImages(formData) {
     console.log("Server response:", data);
 
     if (data.images) {
-      // displayImages(data.images);
+      // displayImages(data.images); // Si necesitas mostrar las imágenes subidas
     } else {
       console.error("No images returned from server.");
     }
@@ -147,70 +138,82 @@ async function uploadImages(formData) {
   }
 }
 
-document
-  .querySelector(".send-data")
-  .addEventListener("click", async (event) => {
-    event.preventDefault();
+async function handleSendDataButtonClick(event) {
+  event.preventDefault();
 
-    const owner = {
-      firstName: document.querySelector('input[name="nombre"]').value,
-      lastName: document.querySelector('input[name="apellidos"]').value,
-      email: document.querySelector('input[name="email"]').value,
-      telephone: document.querySelector('input[name="telefono"]').value,
-    };
+  const owner = getOwnerData();
+  const house = getHouseData();
+  const services = getServicesData();
+  const listing = getListingData();
 
-    const house = {
-      type:
-        document.querySelector('input[name="tipo_alojamiento"]:checked')
-          ?.value || "",
-      isLookingForRoommate:
-        document.querySelector('input[name="con_roomie"]')?.checked || false,
-      isOnlyWomen:
-        document.querySelector('input[name="solo_mujeres"]')?.checked || false,
-      price:
-        parseFloat(document.querySelector('input[name="precio"]').value) || 0,
-      street: document.querySelector('input[name="calle"]').value,
-      postalCode: document.querySelector('input[name="codigo_postal"]').value,
-      crossings: document.querySelector('input[name="cruzamientos"]').value,
-      colony: document.querySelector('input[name="colonia"]').value,
-    };
+  const requestData = { tempId, owner, house, services, listing };
 
-    const services = Array.from(
-      document.querySelectorAll('input[name="servicios"]:checked')
-    ).map((input) => input.value);
+  try {
+    const response = await fetch("http://servicio.runefx.org/listing", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestData),
+    });
 
-    const listing = {
-      title: document.querySelector('input[name="title"]').value,
-      description: document.querySelector('textarea[name="description"]').value,
-    };
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error response:", errorData);
+      throw new Error(errorData.message || "Error desconocido");
+    }
 
-    const requestData = { tempId, owner, house, services, listing };
+    const data = await response.json();
 
-    try {
-      const response = await fetch("http://servicio.runefx.org/listing", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error response:", errorData);
-        throw new Error(errorData.message || "Unknown error");
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("House registered successfully!");
-        window.location.href = "../pages/index.html"; // Redirección tras éxito
-      } else {
-        alert(data.message);
-        window.location.href = "../pages/index.html";
-      }
-    } catch (error) {
-      console.error("Something went wrong:", error);
-      alert("Something went wrong: " + error.message);
+    if (data.success) {
+      alert("Listado creado exitosamente.");
+      window.location.href = "../pages/index.html";
+    } else {
+      alert(data.message);
       window.location.href = "../pages/index.html";
     }
-  });
+  } catch (error) {
+    console.error("Something went wrong:", error);
+    alert("Algo salió mal: " + error.message);
+    window.location.href = "../pages/index.html";
+  }
+}
+
+// Funciones auxiliares para obtener datos del formulario
+function getOwnerData() {
+  return {
+    firstName: document.querySelector('input[name="nombre"]').value,
+    lastName: document.querySelector('input[name="apellidos"]').value,
+    email: document.querySelector('input[name="email"]').value,
+    telephone: document.querySelector('input[name="telefono"]').value,
+  };
+}
+
+function getHouseData() {
+  return {
+    type:
+      document.querySelector('input[name="tipo_alojamiento"]:checked')?.value ||
+      "",
+    isLookingForRoommate:
+      document.querySelector('input[name="con_roomie"]')?.checked || false,
+    isOnlyWomen:
+      document.querySelector('input[name="solo_mujeres"]')?.checked || false,
+    price:
+      parseFloat(document.querySelector('input[name="precio"]').value) || 0,
+    street: document.querySelector('input[name="calle"]').value,
+    postalCode: document.querySelector('input[name="codigo_postal"]').value,
+    crossings: document.querySelector('input[name="cruzamientos"]').value,
+    colony: document.querySelector('input[name="colonia"]').value,
+  };
+}
+
+function getServicesData() {
+  return Array.from(
+    document.querySelectorAll('input[name="servicios"]:checked')
+  ).map((input) => input.value);
+}
+
+function getListingData() {
+  return {
+    title: document.querySelector('input[name="title"]').value,
+    description: document.querySelector('textarea[name="description"]').value,
+  };
+}

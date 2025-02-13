@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fetchHouseDetails(houseId) {
   const url = `http://servicio.runefx.org/listing/${houseId}`;
-  console.log(`Fetching house details from: ${url}`);
+  console.log(`Obteniendo detalles de: ${url}`);
 
   fetch(url)
     .then((response) => {
@@ -19,14 +19,14 @@ function fetchHouseDetails(houseId) {
     })
     .then((data) => {
       if (data) {
-        console.log("Response Data:", data);
+        console.log("Datos: ", data);
         updateHouseDetails(data);
       } else {
-        throw new Error("No data found in response");
+        throw new Error("No se encontraron datos en la respuesta.");
       }
     })
     .catch((error) =>
-      console.error("Error al obtener los detalles de la casa:", error)
+      console.error("Error al obtener los detalles de la casa: ", error)
     );
 }
 

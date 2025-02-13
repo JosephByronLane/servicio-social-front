@@ -12249,8 +12249,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding-top: 50px;
-  overflow-y: auto;
-  max-height: 80vh;
+  max-height: auto;
 }
 .showroom .house-images .house {
   display: flex;
@@ -12303,21 +12302,22 @@ body {
 
 .register-delete-buttons {
   width: 100%;
-  height: 300px;
-  background-color: white;
+  height: 50px;
+  background-color: #29abe2;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 40px;
 }
 .register-delete-buttons button {
-  background-color: white;
+  background-color: #29abe2;
+  color: white;
   border: none;
-  font-size: 20px;
+  font-size: 14px;
+  transition: ease-in-out 0.2s;
 }
 .register-delete-buttons button:hover {
-  color: #29abe2;
+  color: #061f57;
 }
 
 .modelo-banner {
@@ -12362,4 +12362,45 @@ body {
 .modelo-banner .banner-item img {
   width: 200px;
   height: auto;
+}
+
+@media (max-width: 992px) {
+  .master-container .top-content {
+    flex-direction: column;
+    padding: 50px;
+    gap: 50px;
+    text-align: center;
+  }
+  .buscar-casa .search-bar {
+    width: 300px;
+  }
+  .showroom {
+    padding: 50px;
+  }
+  .showroom .house-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .custom-navbar .navbar-brand img {
+    max-width: 140px;
+  }
+  .master-container .top-content h1, .master-container .top-content .h1 {
+    font-size: 40px;
+  }
+  .showroom .house-images {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .custom-navbar {
+    font-size: 18px;
+    width: 100%;
+  }
+  .master-container .top-content {
+    padding: 30px;
+  }
+  .buscar-casa .search-bar {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=index-styles.css.map */
