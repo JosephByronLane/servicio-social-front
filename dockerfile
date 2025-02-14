@@ -1,17 +1,11 @@
-# Usa la imagen oficial de Node.js
-FROM node:18-alpine
+# Use the official Nginx image
+FROM nginx:alpine
 
-# Establece el directorio de trabajo
-WORKDIR /app
+# Copy your custom configuration into Nginx’s configuration directory
 
-# Copia los archivos del proyecto
-COPY . .
+# Copy the entire app folder into Nginx's web root
+# (Assuming your Dockerfile is in the root folder and your app folder is also here)
+COPY app/ /usr/share/nginx/html/
 
-# Instala http-server globalmente
-RUN npm install -g http-server
-
-# Expone el puerto 8080
-EXPOSE 8080
-
-# Comando para iniciar el servidor
-CMD ["http-server", "app", "-p", "8080"]
+# Expose port 80 (Nginx default)
+EXPOSE 80
