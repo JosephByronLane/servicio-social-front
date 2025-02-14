@@ -55,13 +55,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   housingTypeButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const type = button.firstChild.textContent.trim().toLowerCase();
+      const buttonText = button.firstChild.textContent.trim().toLowerCase();
       const isActive = button.classList.contains("active");
 
-      housingTypeButtons.forEach((btn) => btn.classList.remove("active"));
-      filters.type = isActive ? null : type;
+      if (["casa", "departamento", "cuarto"].includes(buttonText)) {
+        housingTypeButtons.forEach((btn) => {
+          const btnText = btn.firstChild.textContent.trim().toLowerCase();
+          if (["casa", "departamento", "cuarto"].includes(btnText)) {
+            btn.classList.remove("active");
+          }
+        });
 
-      if (!isActive) button.classList.add("active");
+        filters.type = isActive ? null : buttonText;
+        if (!isActive) button.classList.add("active");
+      } else if (buttonText === "solo para mujeres") {
+        filters.isOnlyWomen = isActive ? null : true;
+        button.classList.toggle("active");
+      } else if (buttonText === "con roomie") {
+        filters.isLookingForRoommate = isActive ? null : true;
+        button.classList.toggle("active");
+      }
+
       fetchHouses();
     });
   });
@@ -147,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
             )
             .join("");
 
-    // Agregar los event listeners después de que se hayan renderizado las casas
     houses.forEach((house) => {
       const houseElement = document.getElementById(`house-details-${house.id}`);
       houseElement.addEventListener("click", () => storeHouseId(house.id));
@@ -156,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function storeHouseId(houseId) {
     localStorage.setItem("selectedHouseId", houseId);
-    window.location.href = "house-info.html"; // Redirige a la página de detalles
+    window.location.href = "house-info.html";
   }
 
   function truncateText(text, wordLimit = 50) {

@@ -104,9 +104,12 @@ function previewImage(file) {
   reader.readAsDataURL(file);
 }
 
+// Deshabilitar el botón por defecto
+sendDataButton.disabled = true;
+
 async function uploadImages(formData) {
   if (!tempId) {
-    alert("Temp ID not created yet. Please reload the page.");
+    alert("ID temporal no creado, recarga la página.");
     return;
   }
 
@@ -121,25 +124,28 @@ async function uploadImages(formData) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Image upload failed:", errorText);
+      console.error("Falló la subida de imágenes:", errorText);
       throw new Error(errorText);
     }
 
     const data = await response.json();
-    console.log("Server response:", data);
+    console.log("Respuesta:", data);
 
     if (data.images) {
-      // displayImages(data.images); // Si necesitas mostrar las imágenes subidas
+      sendDataButton.disabled = false;
+      console.log("Botón 'send-data' habilitado.");
     } else {
-      console.error("No images returned from server.");
+      console.error("No hay imágenes dentro del servidor.");
     }
   } catch (error) {
-    console.error("Error uploading images:", error);
+    console.error("Error al subir las imágenes:", error);
   }
 }
 
 async function handleSendDataButtonClick(event) {
   event.preventDefault();
+
+  sendDataButton.disabled = true;
 
   const owner = getOwnerData();
   const house = getHouseData();
@@ -174,6 +180,8 @@ async function handleSendDataButtonClick(event) {
     console.error("Something went wrong:", error);
     alert("Algo salió mal: " + error.message);
     window.location.href = "../pages/index.html";
+  } finally {
+    sendDataButton.disabled = false;
   }
 }
 
@@ -217,3 +225,30 @@ function getListingData() {
     description: document.querySelector('textarea[name="description"]').value,
   };
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const radioGroups = document.querySelectorAll(".radio-group");
+
+  radioGroups.forEach((group) => {
+    const radios = group.querySelectorAll('input[type="radio"]');
+
+    radios.forEach((radio) => {
+      radio.addEventListener("click", (event) => {
+        const currentRadio = event.target;
+
+        if (currentRadio.checked && currentRadio.dataset.checked === "true") {
+          currentRadio.checked = false;
+          currentRadio.dataset.checked = "false";
+        } else {
+          currentRadio.dataset.checked = "true";
+        }
+
+        radios.forEach((r) => {
+          if (r !== currentRadio) {
+            r.dataset.checked = "false";
+          }
+        });
+      });
+    });
+  });
+});
