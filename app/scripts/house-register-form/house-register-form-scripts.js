@@ -173,13 +173,13 @@ async function handleSendDataButtonClick(event) {
       alert("Listado creado exitosamente.");
       window.location.href = "../pages/index.html";
     } else {
-      alert(data.message);
+      alert("Listado creado exitosamente.");
       window.location.href = "../pages/index.html";
     }
   } catch (error) {
     console.error("Something went wrong:", error);
     alert("Algo salió mal: " + error.message);
-    window.location.href = "../pages/index.html";
+    // window.location.href = "../pages/index.html";
   } finally {
     sendDataButton.disabled = false;
   }

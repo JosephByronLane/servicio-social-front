@@ -12205,30 +12205,78 @@ body {
   height: auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 480px) {
+  .house-info {
+    padding: 30px !important;
+  }
   .services {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    padding: 30px !important;
   }
-  .services .left-container {
-    width: 100%;
-  }
-  .services .right-container {
-    width: 100%;
+  .about {
+    padding: 30px !important;
   }
   .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
     justify-content: center;
+    gap: 30px;
   }
-  .carousel-inner {
-    width: 150%;
-    margin: 0;
-    justify-self: center;
+  .modelo-banner .banner-item {
+    align-items: center;
   }
-  .carousel-control-prev {
-    transform: translateX(-450%);
+}
+@media (max-width: 768px) {
+  .house-info {
+    padding: 30px !important;
   }
-  .carousel-control-next {
-    transform: translateX(450%);
+  .services {
+    padding: 30px !important;
+  }
+  .about {
+    padding: 30px !important;
+  }
+  .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .modelo-banner .banner-item {
+    align-items: center;
+  }
+}
+@media (max-width: 992px) {
+  .house-info {
+    padding: 30px !important;
+  }
+  .services {
+    padding: 30px !important;
+  }
+  .about {
+    padding: 30px !important;
+  }
+  .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .modelo-banner .banner-item {
+    align-items: center;
   }
 }/*# sourceMappingURL=house-info.css.map */

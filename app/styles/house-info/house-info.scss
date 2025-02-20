@@ -285,38 +285,95 @@ body {
 
 // ESTILOS RESPONSIVOS
 
-@media (max-width: 992px){
-  .services {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+@media (max-width: 480px) {
+  .house-info {
+    padding: 30px !important;
+  }
 
-    .left-container{
-      width: 100%;
-    }
-    .right-container{
-      width: 100%;
-    }
+  .services {
+    padding: 30px !important;
+  }
+
+  .about {
+    padding: 30px !important;
   }
 
   .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
     justify-content: center;
+    gap: 30px;
+
+    .banner-item {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .house-info {
+    padding: 30px !important;
   }
 
-  .carousel-inner {
-    width: 150%;
-    margin: 0;
-    justify-self: center;
+  .services {
+    padding: 30px !important;
   }
 
-  .carousel-control-prev {
-    // width: 10%;
-    // background-color: green;
-    transform: translateX(-450%);
+  .about {
+    padding: 30px !important;
   }
 
-  .carousel-control-next {
-    transform: translateX(450%);
+  .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
   }
 
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .banner-item {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .house-info {
+    padding: 30px !important;
+  }
+
+  .services {
+    padding: 30px !important;
+  }
+
+  .about {
+    padding: 30px !important;
+  }
+
+  .owner-contact-info {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .banner-item {
+      align-items: center;
+    }
+  }
 }

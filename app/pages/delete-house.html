@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borrar listado</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jersey+10&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Saira+Stencil+One&family=Vast+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../styles/delete-house/delete-house.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../assets/Logo-modelo.png"
+            alt="Logo"
+            width="2000"
+            height="48"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown1"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Admisiones
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Formación integral
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown3"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">La universidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vida universitaria</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="master">
+      <div class="delete-input">
+        <h3>Ingresa el token para borrar la vivienda</h3>
+        <form action="" class="delete-house-listing">
+          <input
+            type="text"
+            name="token"
+            id="delete-token"
+            placeholder="Token"
+          />
+          <button>Borrar</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="modelo-banner">
+      <div class="banner-item-first">
+        <img src="../assets/Logo-modelo.png" alt="" />
+        <div class="social-media">
+          <img src="../assets/fb.png" alt="" />
+          <img src="../assets/insta.png" alt="" />
+          <img src="../assets/twitter.png" alt="" />
+        </div>
+        <p>Aviso de privacidad</p>
+        <p>Chetumal: 983 688 2211</p>
+        <p>Mérida: 999 930 1900</p>
+        <p>Valladolid: 985 856 1572</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Mérida</p></b>
+        <p>Licenciaturas</p>
+        <p>Maestrías</p>
+        <p>Diplomados</p>
+        <p>Especialidades</p>
+        <p>Programas en línea</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Chetumal</p></b>
+        <p>Licenciaturas</p>
+        <p>Programas en línea</p>
+      </div>
+      <div class="banner-item">
+        <b><p>Valladolid</p></b>
+        <p>Licenciaturas</p>
+        <p>Programas en línea</p>
+      </div>
+    </footer>
+
+    <script src="../scripts/delete-house/delete-house-scripts.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
