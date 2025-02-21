@@ -16,23 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(
         `http://servicio.runefx.org/listing/delete/delete?token=${token}`,
         {
-          method: "DELETE",
+          method: "GET",
         }
       );
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error response:", errorData);
-        throw new Error(errorData.message || "Error desconocido");
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("Listado borrado exitosamente.");
-        tokenInput.value = ""; // Limpiar el campo de token
+      if (response.status === 200) {
+        // Redirigir a la página de éxito si la respuesta es 200
+        window.location.href = "http://servicio.runefx.org/deletion.success.html";
       } else {
-        alert(data.message || "No se pudo borrar el listado.");
+        // Manejar otros códigos de estado (errores)
+        const errorData = await response.json();
+        console.error("Error hola:", errorData);
+        throw new Error(errorData.message || "Error desconocido");
       }
     } catch (error) {
       console.error("Something went wrong:", error);
