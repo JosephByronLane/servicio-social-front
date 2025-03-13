@@ -12305,20 +12305,123 @@ body {
   height: auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 480px) {
   .form-one {
-    width: 250px;
+    width: 100% !important;
   }
   .available-services {
-    font-size: 12px;
-    width: 465px;
+    font-size: smaller;
+    justify-self: center;
+    border: 1px solid red;
+    width: 100% !important;
+    overflow-x: auto;
+    display: grid;
+    white-space: nowrap;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .checkbox-group {
-    display: flex;
-    align-items: center baseline;
-    gap: 3px;
+  .available-services .checkbox-group {
+    gap: 5px !important;
+    width: 100%;
+    align-items: center !important;
+  }
+  .available-services .checkbox-group label {
+    flex-direction: row;
+    align-self: center !important;
+  }
+  #datos-lugar {
+    width: 150% !important;
+    padding: 0 !important;
+  }
+  #datos-lugar .housing-extra-options {
+    display: inline-block !important;
+    overflow-x: auto !important;
+  }
+  #datos-lugar .form-group {
+    width: 100%;
+    overflow-x: auto;
   }
   .thingy {
-    width: 460px;
+    width: 100%;
+    justify-self: center;
+  }
+}
+@media (max-width: 768px) {
+  .form-one {
+    width: 100% !important;
+  }
+  .available-services {
+    font-size: smaller;
+    justify-self: center;
+    border: 1px solid red;
+    width: 100% !important;
+    overflow-x: auto;
+    display: grid;
+    white-space: nowrap;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .available-services .checkbox-group {
+    gap: 5px !important;
+    width: 100%;
+    align-items: center !important;
+  }
+  .available-services .checkbox-group label {
+    flex-direction: row;
+    align-self: center !important;
+  }
+  #datos-lugar {
+    width: 150% !important;
+    padding: 0 !important;
+  }
+  #datos-lugar .housing-extra-options {
+    display: inline-block !important;
+    overflow-x: auto !important;
+  }
+  #datos-lugar .form-group {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .thingy {
+    width: 100%;
+    justify-self: center;
+  }
+}
+@media (max-width: 992px) {
+  .form-one {
+    width: 100% !important;
+  }
+  .available-services {
+    font-size: smaller;
+    justify-self: center;
+    border: 1px solid red;
+    width: 100% !important;
+    overflow-x: auto;
+    display: grid;
+    white-space: nowrap;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .available-services .checkbox-group {
+    gap: 5px !important;
+    width: 100%;
+    align-items: center !important;
+  }
+  .available-services .checkbox-group label {
+    flex-direction: row;
+    align-self: center !important;
+  }
+  #datos-lugar {
+    width: 150% !important;
+    padding: 0 !important;
+  }
+  #datos-lugar .housing-extra-options {
+    display: inline-block !important;
+    overflow-x: auto !important;
+  }
+  #datos-lugar .form-group {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .thingy {
+    width: 100%;
+    justify-self: center;
   }
 }/*# sourceMappingURL=house-register-form.css.map */

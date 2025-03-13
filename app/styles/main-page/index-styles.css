@@ -12369,64 +12369,193 @@ body {
   height: auto;
 }
 
-@media (max-width: 992px) {
-  .master-container .top-content {
-    flex-direction: column;
-    padding: 50px;
-    gap: 50px;
-    text-align: center;
+@media (max-width: 480px) {
+  .top-content {
+    width: 100% !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 20px !important;
   }
-  .see-more-button {
-    justify-self: center;
+  .top-content .left-container h1, .top-content .left-container .h1 {
+    word-wrap: break-word !important;
+    text-align: center !important;
   }
-  .buscar-casa .search-bar {
-    width: 400px !important;
-    display: flex;
-  }
-  .buscar-casa .search-bar h4, .buscar-casa .search-bar .h4 {
-    justify-self: center;
+  .top-content .left-container button {
     align-self: center;
+    justify-self: center;
   }
-  .showroom {
-    padding: 50px;
+  .top-content .right-container {
+    display: flex !important;
+    justify-content: center !important;
   }
-  .showroom .house-images {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .custom-navbar .navbar-brand img {
-    max-width: 140px;
+  .disclaimer {
+    padding: 20px !important;
   }
   .housing-type {
     overflow-x: auto;
   }
-  .price-range-selector {
-    width: 150% !important;
-    color: red !important;
-  }
-  .price-range-selector h2, .price-range-selector .h2 {
-    align-self: center;
+  .search-bar {
+    width: 100% !important;
   }
   .prices {
-    gap: 45px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
   }
-  .master-container .top-content h1, .master-container .top-content .h1 {
-    font-size: 40px;
+  .filter-buttons {
+    display: flex !important;
+    padding: 20px !important;
+    justify-content: center !important;
+  }
+  .showroom {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+  .showroom h1, .showroom .h1 {
+    text-align: center !important;
   }
   .showroom .house-images {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .modelo-banner .banner-item {
+    align-items: center;
   }
 }
-@media (max-width: 576px) {
-  .custom-navbar {
-    font-size: 18px;
-    width: 100%;
+@media (max-width: 768px) {
+  .top-content {
+    width: 100% !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 20px !important;
   }
-  .master-container .top-content {
-    padding: 30px;
+  .top-content .left-container h1, .top-content .left-container .h1 {
+    word-wrap: break-word !important;
+    text-align: center !important;
   }
-  .buscar-casa .search-bar {
-    font-size: 18px;
+  .top-content .left-container p {
+    text-align: center;
+  }
+  .top-content .left-container button {
+    align-self: center;
+    justify-self: center;
+  }
+  .top-content .right-container {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .disclaimer {
+    padding: 20px !important;
+  }
+  .housing-type {
+    overflow-x: auto;
+  }
+  .search-bar {
+    width: 100% !important;
+  }
+  .prices {
+    gap: 10% !important;
+  }
+  .filter-buttons {
+    display: flex !important;
+    padding: 20px !important;
+    justify-content: center !important;
+  }
+  .showroom {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+  .showroom h1, .showroom .h1 {
+    text-align: center !important;
+  }
+  .showroom .house-images {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .modelo-banner .banner-item {
+    align-items: center;
+  }
+}
+@media (max-width: 992px) {
+  .top-content {
+    width: 100% !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 20px !important;
+  }
+  .top-content .left-container h1, .top-content .left-container .h1 {
+    word-wrap: break-word !important;
+    text-align: center !important;
+  }
+  .top-content .left-container p {
+    text-align: center;
+  }
+  .top-content .left-container button {
+    align-self: center;
+    justify-self: center;
+  }
+  .top-content .right-container {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .disclaimer {
+    padding: 20px !important;
+  }
+  .housing-type {
+    overflow-x: auto;
+  }
+  .search-bar {
+    width: 100% !important;
+  }
+  .prices {
+    gap: 10% !important;
+  }
+  .filter-buttons {
+    display: flex !important;
+    padding: 20px !important;
+    justify-content: center !important;
+  }
+  .showroom {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+  .showroom h1, .showroom .h1 {
+    text-align: center !important;
+  }
+  .showroom .house-images {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .modelo-banner {
+    flex-direction: column !important;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .modelo-banner .banner-item {
+    align-items: center;
   }
 }/*# sourceMappingURL=index-styles.css.map */
