@@ -73,6 +73,10 @@ function handleFiles(files) {
     alert("Por favor, recargue la página.");
     return;
   }
+  console.log("files", files);
+  // Disable the button as soon as files are being processed
+  sendDataButton.disabled = true;
+  sendDataButton.textContent = "Subiendo imágenes...";
 
   const formData = new FormData();
   files.forEach((file) => {
@@ -104,7 +108,6 @@ function previewImage(file) {
   reader.readAsDataURL(file);
 }
 
-// Deshabilitar el botón por defecto
 sendDataButton.disabled = true;
 
 async function uploadImages(formData) {
@@ -112,6 +115,9 @@ async function uploadImages(formData) {
     alert("ID temporal no creado, recarga la página.");
     return;
   }
+
+  sendDataButton.disabled = true;
+  sendDataButton.textContent = "Subiendo imágenes...";
 
   try {
     const response = await fetch(
@@ -125,6 +131,8 @@ async function uploadImages(formData) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Falló la subida de imágenes:", errorText);
+      sendDataButton.disabled = true;   
+      sendDataButton.textContent = "Enviar datos";
       throw new Error(errorText);
     }
 
@@ -133,12 +141,17 @@ async function uploadImages(formData) {
 
     if (data.images) {
       sendDataButton.disabled = false;
+      sendDataButton.textContent = "Enviar datos";
       console.log("Botón 'send-data' habilitado.");
     } else {
       console.error("No hay imágenes dentro del servidor.");
+      sendDataButton.disabled = true;
+      sendDataButton.textContent = "Enviar datos";
     }
   } catch (error) {
     console.error("Error al subir las imágenes:", error);
+    sendDataButton.disabled = true;
+    sendDataButton.textContent = "Enviar datos";
   }
 }
 

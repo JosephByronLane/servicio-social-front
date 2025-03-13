@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const maxPriceInput = document.querySelector(".max-price input");
   const filterButtons = document.querySelectorAll(".toggle-button");
   const houseImagesContainer = document.querySelector(".house-images");
+  const housingCountHeader = document.querySelector(".showroom h1");
 
   const IMAGE_BASE_URL = "http://servicio.runefx.org/";
 
@@ -136,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateUI(houses) {
+    housingCountHeader.textContent = `${houses.length} alojamientos disponibles`;
+
     houseImagesContainer.innerHTML =
       houses.length === 0
         ? `<p class="no-results">No se encontraron casas con los filtros seleccionados.</p>`
@@ -178,4 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${words.slice(0, wordLimit).join(" ")}...`
       : text;
   }
+
+  fetchHouses();
 });
